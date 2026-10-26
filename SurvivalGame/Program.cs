@@ -1,19 +1,24 @@
-﻿using System.Numerics;
-using Raylib_cs;
+﻿global using Raylib_cs;
+global using System.Numerics;
 
-Raylib.InitWindow(800, 600, "Tets");
+int w = 1280;
+int h = 960;
 
+Grid g = new(w, h);
+Player p = new(g, 0, 0);
+
+Raylib.InitWindow(w, h, "Tets");
 Raylib.SetTargetFPS(60);
-
-Vector2 pos = Raylib.GetScreenCenter();
 
 while (!Raylib.WindowShouldClose())
 {
-    pos.X++;
-
     Raylib.BeginDrawing();
-    Raylib.ClearBackground(Color.Beige);
 
-    Raylib.DrawCircleV(pos, 30, Color.Green);
+    Raylib.ClearBackground(Color.Black);
+
+    g.draw();
+    g.DrawPlayer(p);
+    p.update();
+
     Raylib.EndDrawing();
 }
