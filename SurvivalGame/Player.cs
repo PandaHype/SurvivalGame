@@ -1,11 +1,11 @@
 public class Player
 {
-    private readonly Grid grid;
+    private Grid grid;
 
     public int GridX;
     public int GridY;
 
-    public Vector2 Pos { get; private set; }
+    public Vector2 Pos;
 
     public Player(Grid grid, int x = 0, int y = 0)
     {

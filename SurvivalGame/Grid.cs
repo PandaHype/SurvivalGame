@@ -1,8 +1,8 @@
 public class Grid
 {
-    public int Size { get; } = 48;
-    public int Width { get; }
-    public int Height { get; }
+    public int Size = 48;
+    public int Width;
+    public int Height;
 
     private Vector2 offset;
 
